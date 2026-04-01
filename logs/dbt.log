@@ -1,0 +1,78 @@
+[0m11:19:36.116252 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000020B90988D70>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000020B92A9FED0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000020B92A9FC50>]}
+
+
+============================== 11:19:36.124423 | d765e349-6027-4f7a-82f0-e1fb78e8b4c2 ==============================
+[0m11:19:36.124423 [info ] [MainThread]: Running with dbt=1.11.7
+[0m11:19:36.126128 [debug] [MainThread]: running dbt with arguments {'version_check': 'True', 'no_print': 'None', 'static_parser': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'target_path': 'None', 'printer_width': '80', 'write_json': 'True', 'empty': 'None', 'log_cache_events': 'False', 'introspect': 'True', 'cache_selected_only': 'False', 'log_format': 'default', 'debug': 'False', 'fail_fast': 'False', 'partial_parse': 'True', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'warn_error': 'None', 'profiles_dir': 'C:\\Users\\saket\\.dbt', 'invocation_command': 'dbt init chicago_crime_dbt', 'use_colors': 'True', 'indirect_selection': 'eager', 'use_experimental_parser': 'False', 'log_path': 'logs'}
+[0m11:19:36.157224 [debug] [MainThread]: Starter project path: C:\Users\saket\dbt-env\Lib\site-packages\dbt\include\starter_project
+[0m11:19:36.201714 [info ] [MainThread]: 
+Your new dbt project "chicago_crime_dbt" was created!
+
+For more information on how to configure the profiles.yml file,
+please consult the dbt documentation here:
+
+  https://docs.getdbt.com/docs/configure-your-profile
+
+One more thing:
+
+Need help? Don't hesitate to reach out to us via GitHub issues or on Slack:
+
+  https://community.getdbt.com/
+
+Happy modeling!
+
+[0m11:19:36.202472 [info ] [MainThread]: Setting up your profile.
+[0m11:20:03.293113 [debug] [MainThread]: Snowflake adapter: Setting snowflake.connector to ERROR (file logging only)
+[0m11:20:03.293492 [debug] [MainThread]: Snowflake adapter: Setting botocore to ERROR (file logging only)
+[0m11:20:03.293734 [debug] [MainThread]: Snowflake adapter: Setting boto3 to ERROR (file logging only)
+[0m11:22:45.376422 [info ] [MainThread]: Profile chicago_crime_dbt written to C:\Users\saket\.dbt\profiles.yml using target's profile_template.yml and your supplied values. Run 'dbt debug' to validate the connection.
+[0m11:22:45.380280 [debug] [MainThread]: Command `dbt init` succeeded at 11:22:45.379916 after 189.47 seconds
+[0m11:22:45.381212 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000020BAE2ECFC0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000020BADA0E8D0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000020BAE1D3CE0>]}
+[0m11:22:45.382184 [debug] [MainThread]: Flushing usage events
+[0m11:22:45.850404 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m11:22:54.174076 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000176ECF74D70>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000176EA9EC050>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000176EF093D90>]}
+
+
+============================== 11:22:54.179546 | 5e222117-86be-4bca-b494-ae6e3b1c7a11 ==============================
+[0m11:22:54.179546 [info ] [MainThread]: Running with dbt=1.11.7
+[0m11:22:54.180736 [debug] [MainThread]: running dbt with arguments {'static_parser': 'True', 'no_print': 'None', 'version_check': 'True', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'printer_width': '80', 'write_json': 'True', 'introspect': 'True', 'log_cache_events': 'False', 'empty': 'None', 'cache_selected_only': 'False', 'fail_fast': 'False', 'debug': 'False', 'log_format': 'default', 'profiles_dir': 'C:\\Users\\saket\\.dbt', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'warn_error': 'None', 'partial_parse': 'True', 'invocation_command': 'dbt debug', 'use_colors': 'True', 'indirect_selection': 'eager', 'use_experimental_parser': 'False', 'log_path': 'logs'}
+[0m11:22:54.215128 [info ] [MainThread]: dbt version: 1.11.7
+[0m11:22:54.215732 [info ] [MainThread]: python version: 3.13.0
+[0m11:22:54.216258 [info ] [MainThread]: python path: C:\Users\saket\dbt-env\Scripts\python.exe
+[0m11:22:54.216692 [info ] [MainThread]: os info: Windows-11-10.0.26200-SP0
+[0m11:22:54.984614 [debug] [MainThread]: Snowflake adapter: Setting snowflake.connector to ERROR (file logging only)
+[0m11:22:54.984970 [debug] [MainThread]: Snowflake adapter: Setting botocore to ERROR (file logging only)
+[0m11:22:54.985218 [debug] [MainThread]: Snowflake adapter: Setting boto3 to ERROR (file logging only)
+[0m11:22:55.036170 [info ] [MainThread]: Using profiles dir at C:\Users\saket\.dbt
+[0m11:22:55.036833 [info ] [MainThread]: Using profiles.yml file at C:\Users\saket\.dbt\profiles.yml
+[0m11:22:55.037412 [info ] [MainThread]: Using dbt_project.yml file at C:\Users\saket\chicago-crime\dbt_project.yml
+[0m11:22:55.038087 [error] [MainThread]: Encountered an error:
+Internal Error
+  Profile should not be None if loading profile completed
+[0m11:22:55.039053 [debug] [MainThread]: Command `dbt debug` failed at 11:22:55.038962 after 1.02 seconds
+[0m11:22:55.039313 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001768AA8EEA0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001768AAABAD0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001768AA648D0>]}
+[0m11:22:55.039785 [debug] [MainThread]: Flushing usage events
+[0m11:22:55.444243 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m11:24:31.502694 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000022CB2244D70>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000022CB4363ED0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000022CB4363C50>]}
+
+
+============================== 11:24:31.507122 | 777919eb-f149-4bf8-afa7-725bb203190d ==============================
+[0m11:24:31.507122 [info ] [MainThread]: Running with dbt=1.11.7
+[0m11:24:31.507914 [debug] [MainThread]: running dbt with arguments {'version_check': 'True', 'no_print': 'None', 'static_parser': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'target_path': 'None', 'printer_width': '80', 'write_json': 'True', 'empty': 'None', 'log_cache_events': 'False', 'introspect': 'True', 'cache_selected_only': 'False', 'log_format': 'default', 'debug': 'False', 'fail_fast': 'False', 'partial_parse': 'True', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'warn_error': 'None', 'profiles_dir': 'C:\\Users\\saket\\.dbt', 'invocation_command': 'dbt debug', 'indirect_selection': 'eager', 'use_colors': 'True', 'use_experimental_parser': 'False', 'log_path': 'logs'}
+[0m11:24:31.526900 [info ] [MainThread]: dbt version: 1.11.7
+[0m11:24:31.527499 [info ] [MainThread]: python version: 3.13.0
+[0m11:24:31.527849 [info ] [MainThread]: python path: C:\Users\saket\dbt-env\Scripts\python.exe
+[0m11:24:31.528204 [info ] [MainThread]: os info: Windows-11-10.0.26200-SP0
+[0m11:24:32.294864 [debug] [MainThread]: Snowflake adapter: Setting snowflake.connector to ERROR (file logging only)
+[0m11:24:32.295267 [debug] [MainThread]: Snowflake adapter: Setting botocore to ERROR (file logging only)
+[0m11:24:32.295517 [debug] [MainThread]: Snowflake adapter: Setting boto3 to ERROR (file logging only)
+[0m11:24:32.350096 [info ] [MainThread]: Using profiles dir at C:\Users\saket\.dbt
+[0m11:24:32.350906 [info ] [MainThread]: Using profiles.yml file at C:\Users\saket\.dbt\profiles.yml
+[0m11:24:32.351675 [info ] [MainThread]: Using dbt_project.yml file at C:\Users\saket\chicago-crime\dbt_project.yml
+[0m11:24:32.352219 [error] [MainThread]: Encountered an error:
+Internal Error
+  Profile should not be None if loading profile completed
+[0m11:24:32.353308 [debug] [MainThread]: Command `dbt debug` failed at 11:24:32.353189 after 0.97 seconds
+[0m11:24:32.353605 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000022CCFBAEEA0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000022CCFBCBAD0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000022CCFB848D0>]}
+[0m11:24:32.353905 [debug] [MainThread]: Flushing usage events
+[0m11:24:32.790866 [debug] [MainThread]: An error was encountered while trying to flush usage events

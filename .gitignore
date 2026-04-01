@@ -1,0 +1,26 @@
+# Environment variables - NEVER commit these
+.env
+airflow/.env
+
+# dbt
+chicago_crime_dbt/target/
+chicago_crime_dbt/dbt_packages/
+chicago_crime_dbt/logs/
+profiles.yml
+airflow/dags/profiles.yml
+
+# Airflow
+airflow/logs/
+airflow/plugins/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+dbt-env/
+venv/
+*.egg-info/
+
+# OS
+.DS_Store
+Thumbs.db

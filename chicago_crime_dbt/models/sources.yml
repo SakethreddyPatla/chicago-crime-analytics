@@ -1,0 +1,24 @@
+version: 2
+
+sources:
+  - name: raw
+    database: CHICAGO_CRIME_DB
+    schema: RAW 
+    tables:
+      - name: CRIME_INFO
+        description: "Raw Chicago crime data loaded from Socrata API"
+        columns:
+          - name: ID 
+            description: "Unique identifier for the record"
+            tests:
+              - unique 
+              - not_null
+          - name: CASE_NUMBER
+            description: "The Chicago Police Department RD Number (Records Division Number), which is unique to the incident."
+            tests: 
+              
+              - not_null
+          - name: UPDATED_ON
+            description: "Date and time the record was last updated"
+            tests:
+              - not_null  

@@ -1,0 +1,128 @@
+version: 2
+
+models:
+  - name: fct_crimes
+    description: "Core facts table with all crime records enriched with time and location dimensions"
+    columns:
+      - name: crime_id
+        tests:
+          - unique
+          - not_null
+      - name: case_number
+        tests:
+          - not_null
+      - name: crime_date
+        tests:
+          - not_null
+      - name: crime_year
+        tests:
+          - not_null
+      - name: crime_type
+        tests:
+          - not_null
+      - name: is_arrest
+        tests:
+          - not_null
+          - accepted_values:
+              values: [true, false]
+              quote: false
+      - name: is_domestic
+        tests:
+          - not_null
+          - accepted_values:
+              values: [true, false]
+              quote: false
+
+  - name: mart__crimes_by_type
+    description: "Aggregated crime counts by type and year"
+    columns:
+      - name: crime_type
+        tests:
+          - not_null
+      - name: crime_year
+        tests:
+          - not_null
+      - name: total_crimes
+        tests:
+          - not_null
+      - name: total_arrests_pct
+        tests:
+          - not_null
+
+  - name: mart__crimes_by_locations
+    description: "Aggregated crime counts by district and community area"
+    columns:
+      - name: police_district
+        tests:
+          - not_null:
+              config:
+                severity: warn
+      - name: community_area
+        tests:
+          - not_null:
+              config:
+                severity: warn
+      - name: total_crimes
+        tests:
+          - not_null
+
+  - name: mart__crime_trends
+    description: "Monthly crime trends by year"
+    columns:
+      - name: crime_year
+        tests:
+          - not_null
+      - name: crime_month
+        tests:
+          - not_null
+          - accepted_values:
+              values: [1,2,3,4,5,6,7,8,9,10,11,12]
+              quote: false
+      - name: total_crimes
+        tests:
+          - not_null
+
+  - name: mart__top_dangerous_districts
+    description: "Top 10 most dangerous districts per year ranked by crime count"
+    columns:
+      - name: police_district
+        tests:
+          - not_null
+      - name: crime_year
+        tests:
+          - not_null
+      - name: rank
+        tests:
+          - not_null
+          - accepted_values:
+              values: [1,2,3,4,5,6,7,8,9,10]
+              quote: false
+
+  - name: mart__crime_hotspots
+    description: "Top 20 crime hotspot community areas per year"
+    columns:
+      - name: community_area
+        tests:
+          - not_null:
+              config:
+                severity: warn
+      - name: crime_year
+        tests:
+          - not_null
+      - name: hotspot_rank
+        tests:
+          - not_null
+          - accepted_values:
+              values: [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20]
+              quote: false
+
+  - name: mart__YOY_crime_trend
+    description: "Year-over-year crime count change with percentage"
+    columns:
+      - name: crime_year
+        tests:
+          - unique
+          - not_null
+      - name: total_crimes
+        tests:
+          - not_null
