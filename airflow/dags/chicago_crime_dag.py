@@ -16,7 +16,7 @@ with DAG(
     dag_id          = 'chicago_crime_pipeline',
     default_args    = default_args,
     description     = 'Daily Chicago Crime data ingestion and dbt transformation',
-    schedule        = '@daily',
+    schedule        = '0 6 * * *',
     start_date      = datetime(2025, 1, 1),
     catchup         = False,
     tags            = ['chicago', 'crime', 'snowflake', 'dbt'],
@@ -31,19 +31,19 @@ with DAG(
     # ── Task 2: Run dbt transformations ──
     dbt_run = BashOperator(
         task_id      = 'dbt_run',
-        bash_command = 'pip install -q dbt-snowflake && dbt run --project-dir /opt/airflow/dags/chicago_crime_dbt --profiles-dir /opt/airflow/dags',
+        bash_command = 'pip install -q dbt-snowflake && dbt run --project-dir /opt/airflow/chicago_crime_dbt --profiles-dir /opt/airflow/dags',
     )
 
     # ── Task 3: Run dbt tests ──
     dbt_test = BashOperator(
         task_id      = 'dbt_test',
-        bash_command = 'dbt test --project-dir /opt/airflow/dags/chicago_crime_dbt --profiles-dir /opt/airflow/dags',
+        bash_command = 'dbt test --project-dir /opt/airflow/chicago_crime_dbt --profiles-dir /opt/airflow/dags',
     )
 
     # ── Task 4: Generate dbt docs ──
     dbt_docs = BashOperator(
         task_id      = 'dbt_docs_generate',
-        bash_command = 'dbt docs generate --project-dir /opt/airflow/dags/chicago_crime_dbt --profiles-dir /opt/airflow/dags',
+        bash_command = 'dbt docs generate --project-dir /opt/airflow/chicago_crime_dbt --profiles-dir /opt/airflow/dags',
     )
 
     # ── Pipeline order ──
