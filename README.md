@@ -43,14 +43,14 @@ dbt Core Transformations
         ├── STAGING.stg_crime_info (view)
         │
         └── MARTS
-            ├── fct_crimes
-            ├── mart_crimes_by_type
-            ├── mart_crimes_by_location
-            ├── mart_monthly_trends
-            ├── mart_arrest_rate_trends
-            ├── mart_top_dangerous_districts
-            ├── mart_crime_hotspots
-            └── mart_yoy_crime_change
+            ├── fct_crimes.sql
+            ├── mart__crimes_by_type.sql
+            ├── mart__crimes_by_locations.sql
+            ├── mart__crime_trends.sql
+            ├── mart__crimes_by_loaction_type.sql
+            ├── mart__top_dangerous_districts.sql
+            ├── mart__crime_hotspots.sql
+            └── mart__YOY_crime_change.sql
         │
         ▼
 Apache Airflow (Docker)
@@ -77,24 +77,24 @@ Apache Airflow (Docker)
 chicago-crime/
 ├── chicago_crime_load.py       # Ingestion script
 ├── requirements.txt            # Python dependencies
-├── .env.example                # Environment variable template
+├── .env               # Environment variable template
 ├── chicago_crime_dbt/          # dbt project
 │   ├── dbt_project.yml
 │   └── models/
 │       ├── staging/
 │       │   ├── sources.yml
-│       │   ├── staging.yml
+│       │   ├── schema.yml
 │       │   └── stg_crime_info.sql
 │       └── marts/
-│           ├── marts.yml
+│           ├── schema.yml
 │           ├── fct_crimes.sql
-│           ├── mart_crimes_by_type.sql
-│           ├── mart_crimes_by_location.sql
-│           ├── mart_monthly_trends.sql
-│           ├── mart_arrest_rate_trends.sql
-│           ├── mart_top_dangerous_districts.sql
-│           ├── mart_crime_hotspots.sql
-│           └── mart_yoy_crime_change.sql
+│           ├── mart__crimes_by_type.sql
+│           ├── mart__crimes_by_locations.sql
+│           ├── mart__crime_trends.sql
+│           ├── mart__crimes_by_loaction_type.sql
+│           ├── mart__top_dangerous_districts.sql
+│           ├── mart__crime_hotspots.sql
+│           └── mart__YOY_crime_change.sql
 └── airflow/
     ├── docker-compose.yml
     └── dags/
@@ -134,13 +134,13 @@ chicago-crime/
 |---|---|---|
 | `stg_crime_info` | View | Cleaned and typed staging layer |
 | `fct_crimes` | Table | Core facts table with all dimensions |
-| `mart_crimes_by_type` | Table | Crime counts and arrest rates by type and year |
-| `mart_crimes_by_location` | Table | Crime counts by district and community area |
-| `mart_monthly_trends` | Table | Monthly crime volume trends by year |
-| `mart_arrest_rate_trends` | Table | Year-over-year arrest rate changes |
-| `mart_top_dangerous_districts` | Table | Top 10 districts by crime count per year |
-| `mart_crime_hotspots` | Table | Top 20 community area hotspots per year |
-| `mart_yoy_crime_change` | Table | Year-over-year crime count and percentage change |
+| `mart__crimes_by_type` | Table | Crime counts and arrest rates by type and year |
+| `mart__crimes_by_locations` | Table | Crime counts by district and community area |
+| `mart__crime_trends` | Table | Monthly crime volume trends by year |
+| `mart__crimes_by_loaction_type` | Table | Crime counts by location type |
+| `mart__top_dangerous_districts` | Table | Top 10 districts by crime count per year |
+| `mart__crime_hotspots` | Table | Top 20 community area hotspots per year |
+| `mart__YOY_crime_change` | Table | Year-over-year crime count and percentage change |
 
 ---
 
@@ -213,4 +213,4 @@ docker-compose up -d
 
 - ~8 million records
 - Updated daily by the Chicago Police Department
-- Fields include crime type, location, arrest status, district, community area, and coordinates
+- Fields include crime type, location, arrest status, police district, community area, and coordinates
